@@ -12,8 +12,6 @@ import { clusterApiUrl } from "@solana/web3.js";
 // Default styles that can be overridden by your app
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 require('@solana/wallet-adapter-react-ui/styles.css')
-
-// imports here
  
 export default function AppWalletProvider({
     children,

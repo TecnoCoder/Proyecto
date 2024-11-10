@@ -2,8 +2,15 @@
 import Link from "next/link";
 import CollaborationCard from "@/components/collaborationCard";
 import { dataTest } from "../utils/collaborationData";
+import { useWallet } from "@solana/wallet-adapter-react";
+import { redirect } from 'next/navigation'
+
 
 export default function Collaborations() {
+  const { publicKey } = useWallet()
+  if(!publicKey){
+    return redirect('/')
+  }
   return (
     <div>
        { dataTest.length == 0 && (

@@ -1,10 +1,14 @@
 'use client'
 import EventCard from "../components/eventCard";
 import { dataTest } from "../app/utils/data";
+import WalletInfo from "@/components/wallet-info";
 
 export default function Home() {
   return (
     <div>
+      <div>
+        <WalletInfo />
+      </div>
       <> { dataTest.length == 0 && (
         <div className="my-16 flex flex-col items-center">
           <h1 className="text-4xl text-center font-bold">¡Lo sentimos! No hay eventos disponibles</h1>

@@ -1,8 +1,15 @@
 'use client'
 import { dataTest } from "../utils/myEventData";
 import MyEventCard from "@/components/myEventCard";
+import { useWallet } from "@solana/wallet-adapter-react";
+import { redirect } from 'next/navigation'
+
 
 export default function MyEvents() {
+  const { publicKey } = useWallet()
+  if(!publicKey){
+    return redirect('/')
+  }
   return (
     <div>
        { dataTest.length == 0 && (
